@@ -49,7 +49,7 @@ Alternatively, you can start the sample from the command line ([Maven](http://ma
 * int-xmpp:header-enricher 
 * int-xmpp:outbound-channel-adapter
 
-# XMPP Demo (Use <import resource="springxmpp-context.xml"/> inside spring-amqp-context.xml)
+# XMPP Demo (Use "springxmpp-context.xml" inside spring-amqp-context.xml)
 
 This demo has been tested with ejabberd (on Ubuntu) and
 demonstrates the following aspects of the XMPP support available with Spring Integration:
@@ -71,7 +71,7 @@ You'll also need to test it with your friend or have two ejabberd accounts setup
 	When demo is started you'll see on Ejabberd that your buddy 
 	has just signed on. Now you can send a message from JabberID (on ubuntu) and see it appear on the console.
 
-# BOSH Demo (Use <import resource="springbosh-context.xml"/> inside spring-amqp-context.xml)
+# BOSH Demo (Use springbosh-context.xml" inside spring-amqp-context.xml)
 
 For testing BOSH, you must download BBCRD open-source demo of strophe.js using BOSH connection:
 
