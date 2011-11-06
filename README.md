@@ -8,7 +8,7 @@ This sample demonstrates basic functionality of the **Spring Integration AMQP Ad
 Once the application is started, you enter some text on the command prompt and a message containing that entered text is dispatched to the AMQP queue. In return that message will be published to XMPP server using XMPP connection or BOSH connection. You can switch the choice by importing BOSH/XMPP config file in "src\main\resources\META-INF\spring\integration\spring-amqp-context.xml"
 
 like shown below:
-	<!-- <import resource="springxmpp-context.xml"/>  -->
+	<import resource="springxmpp-context.xml"/>
 	<import resource="springbosh-context.xml"/>
 
 > In order to run the example you will need a running  instance of RabbitMQ and Ejabberd. A local installation with just the basic defaults will be sufficient. Please visit: [http://www.rabbitmq.com/install.html] and(http://ndpar.blogspot.com/2010/02/installing-ejabberd-on-ubuntu.html) for detailed installation procedures. For ejabberd, you can use default localhost domain for test purposes.
