@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.1.xsd
+		http://www.springframework.org/schema/integration/xmpp http://www.springframework.org/schema/integration/xmpp/spring-integration-xmpp-2.0.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:int="http://www.springframework.org/schema/integration">
+        
+    
+    <int:channel id="toUserChannel"/>
+    
+    <int:outbound-channel-adapter channel="toUserChannel" ref="boshManager" method="broadcastMessage"/>
+    
+    <bean id="boshManager" class="org.raj.londonboy.bosh.service.PubSubBoshManager">
+    	<constructor-arg name="boshDao" ref="boshDao"/>
+    </bean>
+    
+    <bean id="boshDao" class="org.raj.londonboy.bosh.dao.PubSubBoshDao">
+    	<constructor-arg name="boshSource" ref="bashSource"/>
+    	<constructor-arg name="loginUserName" value="${bosh.login}"/>
+    	<constructor-arg name="loginPassword" value="${bosh.password}"/>
+    	<constructor-arg name="pubsubNode" value="${bosh.pubsub.node}"/>
+    </bean>
+    
+    <bean id="bashSource" class="org.raj.londonboy.bosh.connection.EjabberdBoshSource">
+    	<constructor-arg name="sslEnable" value="false"/>
+    	<constructor-arg name="ejabberdHostName" value="${bosh.host}"/>
+    	<constructor-arg name="ejabberdPort" value="${bosh.port}"/>
+    	<constructor-arg name="ejabberdDomain" value="${bosh.domain}"/>
+    </bean>
+    
+</beans>
