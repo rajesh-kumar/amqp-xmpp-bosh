@@ -71,7 +71,7 @@ You'll also need to test it with your friend or have two ejabberd accounts setup
 	When demo is started you'll see on Ejabberd that your buddy 
 	has just signed on. Now you can send a message from JabberID (on ubuntu) and see it appear on the console.
 
-# BOSH Demo (Use springbosh-context.xml" inside spring-amqp-context.xml)
+# BOSH Demo (Use "springbosh-context.xml" inside spring-amqp-context.xml)
 
 For testing BOSH, you must download BBCRD open-source demo of strophe.js using BOSH connection:
 
